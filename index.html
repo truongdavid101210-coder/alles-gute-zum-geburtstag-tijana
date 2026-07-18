@@ -15,17 +15,17 @@ font-family:'Segoe UI',sans-serif;
 }
 
 body{
-min-height:100vh;
-overflow:hidden;
+min-height:100svh;
+overflow-x:hidden;
+overflow-y:auto;
 display:flex;
 justify-content:center;
-align-items:center;
+align-items:flex-start;
+padding:20px 10px;
 background:linear-gradient(-45deg,#ff5e7a,#4fded0,#24c9d8,#ff7a8a,#59f3e8);
 background-size:400% 400%;
-animation:bg 12s ease infinite;
-background-size:400% 400%;
 animation:bg 10s ease infinite;
-cursor:none;
+cursor:auto;
 }
 
 @keyframes bg{
@@ -35,8 +35,9 @@ cursor:none;
 }
 
 .container{
-width:min(90%,850px);
-padding:35px;
+width:min(95%,850px);
+padding:20px;
+margin:20px 0;
 text-align:center;
 color:white;
 border-radius:30px;
@@ -288,7 +289,34 @@ position:absolute;
 pointer-events:none;
 font-size:22px;
 }
+@media (max-width:768px){
 
+h1{
+font-size:2.1rem;
+}
+
+.subtitle{
+font-size:1rem;
+}
+
+.message{
+padding:15px;
+font-size:0.95rem;
+line-height:1.6;
+}
+
+button{
+width:100%;
+padding:15px;
+font-size:1rem;
+margin-top:15px;
+}
+
+.candle{
+transform:scale(.9);
+}
+
+}
 </style>
 </head>
 <body>
@@ -491,18 +519,18 @@ setInterval(unicorn,5000);
 
 /* Cursor Glow */
 
+if(window.innerWidth > 768){
+
 const cursor=document.createElement("div");
-
 cursor.className="cursor";
-
 document.body.appendChild(cursor);
 
 document.addEventListener("mousemove",e=>{
-
 cursor.style.left=e.clientX-15+"px";
 cursor.style.top=e.clientY-15+"px";
-
 });
+
+}
 
 /* Brief */
 
